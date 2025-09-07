@@ -1,0 +1,238 @@
+*{
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: "myFontCustom";
+    src: url("FontText/FVF\ Fernando\ 08.ttf") format("truetype");
+    /* src: url("FontText/FVF\ Fernando\ 08.ttf") format("truetype"); */
+}
+body {
+    font-family: "myFontCustom";
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* touch-action: pan-x; */
+}
+/* Phan tieu de  */
+/* div.div-contain-first {
+    display: flex;
+    width: 100%; 
+} */
+
+/* div.div-contain-first div.first-div {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0; 
+    animation: slideAnimation linear infinite;
+    animation-duration: 40s;
+    animation-direction: normal;
+}
+
+div.first-div:nth-child(1) { background-image: url(FinalCityImage.jpg); }
+div.first-div:nth-child(2) { background-image: url(FinalForestImage.png); }
+div.first-div:nth-child(3) { background-image: url(FinalBeachImage.png); }
+
+@keyframes slideAnimation {
+   0%{transform: translate(0);}
+   100%{transform: translate(-100%);}
+} */
+div.div-contain-first {
+    display: flex;
+    width: 100%; /* Tổng độ rộng của 3 ảnh */
+    height: 100vh;
+    overflow: hidden; /* Ngăn ảnh bị tràn */
+}
+
+div.div-contain-first div.first-div {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100svh;
+    background-size: cover; /* Giữ nguyên */
+    background-position: center;
+    background-repeat: no-repeat; /* Ngăn ảnh bị lặp */
+    object-fit: cover; /* Đảm bảo ảnh luôn full khung */
+    animation: slideAnimation 100s linear infinite;
+}
+div.first-div:nth-child(1) { background-image: url(FinalCityImage.jpg); background-size: cover;}
+div.first-div:nth-child(2) { background-image: url(FinalForestImage.png); background-size: cover;}
+div.first-div:nth-child(3) { background-image: url(FinalBeachImage.png); background-size: cover;}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+div.first-div-top{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: -100vh;
+    z-index: 4;
+    /* background-color: aqua; */
+}
+
+div.menu-div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center; 
+    gap: 4vw;
+    position: absolute;
+    top: 2.5vw;
+    /* background-color: antiquewhite; */
+}
+
+div.menu-div a.menu-option {
+    /* font-size: 1.38vw; */
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white !important;
+    font-family: "myFontCustom";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+div.div-contain-nameGame {
+    width: 100%;
+    height: 25vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 120px;
+    /* background-color: aqua; */
+    
+}
+div.div-contain-nameGame div.main-div-name {
+    width: 600px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    /* background-color: rgba(253, 253, 253, 0.233); */
+}
+div.div-contain-nameGame div.main-div-name h1.tenGame {
+    font-size: 80px; /* Bootstrap đã sử dụng 'display-1' */
+    text-align: center;
+    color: white;
+    font-family: "myFontCustom";
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+}
+
+div.div-contain-nameGame div.main-div-name button.button-download {
+    border-radius: 20px; /* Đổi hình dạng button */
+    padding: 10px 20px; /* Điều chỉnh khoảng cách */
+    margin-top: 30px;
+    font-size: 15px;
+    font-family: "myFontCustom";
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    position: relative;
+    transition: 0.4s;
+}
+div.div-contain-nameGame div.main-div-name button.button-download a{
+    color: white !important;
+}
+button.button{
+    position: relative;
+}
+
+.div-contain-detail{
+    margin-top: 200px !important;
+}
+/* Phan thu 2 */
+
+
+/* div.div-contain-second{
+    width: 100%;
+    height: 1000px;
+    background-color: antiquewhite;
+    margin-top: 10px;
+    position: relative;
+    top: -100vh;
+} */
+
+div.second-div{
+    position: relative;
+    top: -100vh;
+}
+@media (max-width: 980px) {
+    div.menu-div a.menu-option {
+        font-size: 14px !important;
+        font-family: "myFontCustom";
+    }
+    div.menu-div {
+        gap: 50px;
+        /* background-color: antiquewhite; */
+    }
+}
+@media (max-width: 768px) {
+    .container-fluid {
+        overflow-x: hidden; /* Cho phép kéo ngang trên điện thoại */
+    }
+    div.menu-div a.menu-option {
+        font-size: 12 px !important;
+        font-family: "myFontCustom";
+    }
+    div.div-contain-nameGame{
+        top: 200px;
+    }
+    div.div-contain-nameGame div.main-div-name{
+        width: 300px;
+        height: 150px;
+    }
+    div.div-contain-nameGame div.main-div-name button.button-download {
+        width: 120px;
+        height: 38px;
+        font-size: 10px;
+        margin-top: 20px;
+        font-family: "myFontCustom";
+    }
+    div.div-contain-nameGame div.main-div-name h1.tenGame {
+        font-family: "myFontCustom";
+        font-size: 40px; /* Bootstrap đã sử dụng 'display-1' */
+    }
+    .second-div {
+        padding: 20px; /* Giảm khoảng cách */
+        height: 3000px;
+    }
+}
+
+@media (max-width: 596px) {
+    .second-div {
+        height: 1200px;
+    }
+    div.menu-div a.menu-option {
+        font-size: 11px !important;
+        font-family: "myFontCustom";
+    }
+    div.menu-div {
+        gap: 15px !important;
+        /* background-color: antiquewhite; */
+    }
+}
+p, span, h1, h4, h5, button.button, a{
+    font-family: "myFontCustom";
+}
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+button.button{
+    width: 180px;
+}
